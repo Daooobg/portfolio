@@ -1,4 +1,12 @@
 {
+    "Navigation": {
+        "FirstName": "Ивайло",
+        "SecondName": "Иванов",
+        "Portfolio": "Портфолио",
+        "Skills": "Умения",
+        "DownloadCV": "Свали CV",
+        "ContactMe": "Свържи се с мен"
+    },
     "HomePage": {
         "HeroSection": {
             "hello": "Здравей"
