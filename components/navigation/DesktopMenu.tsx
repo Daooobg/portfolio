@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import ArrowBottom from '@/ui/design/ArrowBottom';
-import ArrowRight from '@/ui/design/arrowRight';
+import ArrowRight from '@/ui/design/ArrowRight';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function DesktopMenu() {
