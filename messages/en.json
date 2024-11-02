@@ -9,7 +9,11 @@
     },
     "HomePage": {
         "HeroSection": {
-            "hello": "Hello, World"
+            "Hello": "Hello, I am",
+            "Name": "Ivaylo Ivanov",
+            "Header": "Web Develope",
+            "Text": "I bring creative ideas to life with code. I specialize in JavaScript, and modern frameworks to create seamless and engaging web experiences. Let's build something extraordinary together!",
+            "ButtonContent": "Let’s Talk"
         }
     }
 }
