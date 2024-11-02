@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useCallback, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-import ArrowRight from '@/ui/design/arrowRight';
+import ArrowRight from '@/ui/design/ArrowRight';
 import ArrowBottom from '@/ui/design/ArrowBottom';
 import LanguageSwitcher from './LanguageSwitcher';
 
