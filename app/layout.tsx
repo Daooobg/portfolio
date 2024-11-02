@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { getLocale, getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import LanguageSwitcher from '@components/navigation/LanguageSwitcher';
+
+import Name from '@components/navigation/Name';
+import HamburgerMenu from '@components/navigation/HamburgerMenu';
+import DesktopMenu from '@components/navigation/DesktopMenu';
+
 import './globals.css';
 
 const poppins = Poppins({
@@ -23,11 +27,16 @@ export default async function RootLayout({
     const locale = await getLocale();
 
     const messages = await getMessages();
+
     return (
         <html lang={locale}>
             <NextIntlClientProvider locale={locale} messages={messages}>
                 <body className={poppins.className}>
-                    <LanguageSwitcher />
+                    <nav className="bg-dark-black flex justify-between p-4 items-center md:px-20 md:py-10">
+                        <Name />
+                        <HamburgerMenu />
+                        <DesktopMenu />
+                    </nav>
                     {children}
                 </body>
             </NextIntlClientProvider>
