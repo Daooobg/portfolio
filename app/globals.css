@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.unActiveLanguageBtn {
+    @apply text-light-primary text-base font-medium leading-normal w-9 h-8 px-1.5 py-1 rounded-md border border-white flex-col justify-center items-center inline-flex transform duration-200 transition ease-out;
+}
+
+.activeLanguageBtn {
+    @apply text-dark-black text-base font-medium leading-normal text-center w-9 h-8 px-1.5 py-1 border border-dark-gray bg-dark-gray rounded-md flex-col justify-center items-center inline-flex transform duration-200 transition ease-out;
+}
+
+.primaryBtn {
+    @apply text-dark-black text-[22px] font-medium h-[58px] px-9 py-4 bg-green-primary rounded-xl justify-center items-center gap-2.5 inline-flex hover:bg-green-secondary transform duration-200 transition ease-out;
+}
+
+.secondaryBtn {
+    @apply text-green-primary text-base font-medium px-6 py-3 rounded-xl border-2 border-green-primary justify-center items-center gap-2.5 inline-flex hover:border-dark-black hover:text-dark-black hover:bg-green-primary transform duration-200 transition ease-out;
+}
+
+.tertiaryBtn {
+    @apply text-light-primary text-base font-medium leading-normal hover:text-green-primary transform duration-200 transition ease-out;
+}
