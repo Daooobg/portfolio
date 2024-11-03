@@ -7,7 +7,7 @@ import ArrowRight from '@/ui/design/ArrowRight';
 export default function HeroSection() {
     const t = useTranslations('HomePage.HeroSection');
     return (
-        <section className="bg-dark-black py-10 space-y-10 lg:grid lg:grid-cols-[400px_auto] xl:grid-cols-[400px_784px] xl:gap-10 xl:justify-center xl:items-center">
+        <section className="py-10 space-y-10 lg:grid lg:grid-cols-[400px_auto] xl:gap-10 xl:justify-center xl:items-center">
             <div className="w-[328px] h-[490px] sm:w-[395px] sm:h-[592px] relative mx-auto">
                 <HeroImageLoader />
             </div>

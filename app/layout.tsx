@@ -30,10 +30,10 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className='!scroll-smooth'>
+        <html lang={locale} className="!scroll-smooth">
             <NextIntlClientProvider locale={locale} messages={messages}>
-                <body className={poppins.className}>
-                    <nav className="bg-dark-black flex justify-between p-4 items-center md:px-20 md:py-10">
+                <body className={`${poppins.className} bg-dark-black`}>
+                    <nav className="flex justify-between p-4 items-center md:px-20 md:py-10 max-w-[1240px] mx-auto">
                         <Name />
                         <HamburgerMenu />
                         <DesktopMenu />

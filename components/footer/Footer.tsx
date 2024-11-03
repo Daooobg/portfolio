@@ -12,10 +12,10 @@ export default function Footer() {
     const year = now.getFullYear();
     const t = useTranslations('Footer');
     return (
-        <footer className=" bg-dark-black py-10 px-4 sm:px-6 lg:px-10">
+        <footer className="py-10 px-4 sm:px-6 lg:px-10">
             <div className='max-w-[1280px] space-y-10 mx-auto'>
                 <div className="h-px bg-divider"></div>
-                <section className="flex flex-col gap-10 text-light-primary sm:grid sm:grid-cols-3">
+                <section className="flex flex-col gap-10 text-light-primary sm:grid sm:grid-cols-3 sm:mx-2 lg:mx-6 lg:gap-12">
                     <div className="space-y-4">
                         <h2 className="text-base font-medium sm:text-lg">{t('PersonalPortfolio')}</h2>
                         <p className="text-sm font-normal capitalize text-footerText">{t('PortfolioText')}</p>

@@ -20,14 +20,20 @@ import Image from 'next/image';
 export default function SkillsSection() {
     const t = useTranslations('HomePage.SkillsSection');
     return (
-        <section id='skillsSection' className="bg-dark-black py-10 space-y-10 px-4 sm:space-y-12 sm:py-20">
+        <section id="skillsSection" className="py-10 space-y-10 px-4 sm:space-y-12 sm:py-20">
             <div className="text-center max-w-[700px] mx-auto">
-                <p className="text-green-primary text-base font-medium leading-normal mb-1 sm:text-[32px] sm:leading-[48px] sm:mb-2">{t('Header')}</p>
-                <p className="text-light-primary text-base font-normal leading-normal sm:text-lg sm:leading-[27px]">{t('Body')}</p>
+                <p className="text-green-primary text-base font-medium leading-normal mb-1 sm:text-[32px] sm:leading-[48px] sm:mb-2">
+                    {t('Header')}
+                </p>
+                <p className="text-light-primary text-base font-normal leading-normal sm:text-lg sm:leading-[27px]">
+                    {t('Body')}
+                </p>
             </div>
             <div className="overflow-x-scroll grid grid-cols-[215px_300px] gap-y-10 gap-x-4 sm:justify-center sm:grid-cols-[245px_auto] sm:overflow-hidden">
                 {/* Programming Languages */}
-                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">{t('ProgrammingLanguages')}</p>
+                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">
+                    {t('ProgrammingLanguages')}
+                </p>
                 <div className="text-light-primary text-base font-bold leading-normal grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 sm:text-lg sm:font-medium sm:leading-[27px]">
                     <div className="flex items-center gap-1 w-36">
                         <Image src={JavaScriptSvg} alt="JavaScript icon" />
@@ -39,7 +45,9 @@ export default function SkillsSection() {
                     </div>
                 </div>
                 {/* Web Technologies */}
-                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">{t('WebTechnologies')}</p>
+                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">
+                    {t('WebTechnologies')}
+                </p>
                 <div className="text-light-primary text-base font-bold leading-normal grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 sm:text-lg sm:font-medium sm:leading-[27px]">
                     <div className="flex items-center gap-1">
                         <Image src={HTMLSvg} alt="HTML icon" />
@@ -62,7 +70,9 @@ export default function SkillsSection() {
                         <span>Tailwindcss</span>
                     </div>
                 </div>
-                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">{t('FrontEnd')}</p>
+                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">
+                    {t('FrontEnd')}
+                </p>
                 <div className="text-light-primary text-base font-bold leading-normal grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 sm:text-lg sm:font-medium sm:leading-[27px]">
                     <div className="flex items-center gap-1">
                         <Image src={ReactSvg} alt="React icon" />
@@ -81,14 +91,18 @@ export default function SkillsSection() {
                         <span>Angular</span>
                     </div>
                 </div>
-                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">{t('BackEnd')}</p>
+                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">
+                    {t('BackEnd')}
+                </p>
                 <div className="text-light-primary text-base font-bold leading-normal grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 sm:text-lg sm:font-medium sm:leading-[27px]">
                     <div className="flex items-center gap-1">
                         <Image src={ExpressSvg} alt="ExpressJs icon" />
                         <span>ExpressJs</span>
                     </div>
                 </div>
-                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">{t('Database')}</p>
+                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">
+                    {t('Database')}
+                </p>
                 <div className="text-light-primary text-base font-bold leading-normal grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 sm:text-lg sm:font-medium sm:leading-[27px]">
                     <div className="flex items-center gap-1">
                         <Image src={MongoSvg} alt="MongoDB icon" />
@@ -99,7 +113,9 @@ export default function SkillsSection() {
                         <span>MySQL</span>
                     </div>
                 </div>
-                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">{t('StateManagement')}</p>
+                <p className="text-green-primary text-base font-bold leading-normal sm:text-lg sm:leading-[27px]">
+                    {t('StateManagement')}
+                </p>
                 <div className="text-light-primary text-base font-bold leading-normal grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 sm:text-lg sm:font-medium sm:leading-[27px]">
                     <div className="flex items-center gap-1">
                         <Image src={ReduxSvg} alt="Redux icon" />
