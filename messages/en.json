@@ -7,6 +7,13 @@
         "DownloadCV": "Download CV",
         "ContactMe": "Contact me"
     },
+    "Footer": {
+        "PersonalPortfolio": "Personal Portfolio",
+        "PortfolioText": "Within this portfolio, you'll find a curated collection of my Latest work.",
+        "Contacts": "Contacts",
+        "Address": "Dagenham, Essex, United Kingdom",
+        "LetsConnect": "Let’s connect"
+    },
     "HomePage": {
         "HeroSection": {
             "Hello": "Hello, I am",

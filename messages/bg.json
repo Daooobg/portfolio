@@ -7,6 +7,13 @@
         "DownloadCV": "Свали CV",
         "ContactMe": "Свържи се с мен"
     },
+    "Footer": {
+        "PersonalPortfolio": "Лично портфолио",
+        "PortfolioText": "В това портфолио ще откриете подбрана колекция от моята най-скорошна работа.",
+        "Contacts": "Контакти",
+        "Address": "Дагенхам, Есекс, Обединеното Кралство",
+        "LetsConnect": "Последвай ме"
+    },
     "HomePage": {
         "HeroSection": {
             "Hello": "Здравейте, аз съм",
