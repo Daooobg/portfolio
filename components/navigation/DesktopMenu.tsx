@@ -4,6 +4,9 @@ import Link from 'next/link';
 import ArrowBottom from '@/ui/design/ArrowBottom';
 import ArrowRight from '@/ui/design/ArrowRight';
 import LanguageSwitcher from './LanguageSwitcher';
+import ArrowRightSvg from '/public/svgs/arrow_right_alt.svg';
+import Image from 'next/image';
+
 
 export default function DesktopMenu() {
     const t = useTranslations('Navigation');
@@ -22,14 +25,14 @@ export default function DesktopMenu() {
                     </Link>
                 </li>
                 <li>
-                    <button className="tertiaryBtn flex items-center gap-1">
-                        <ArrowBottom />
+                    <button className="tertiaryBtn flex items-center gap-1 group">
+                        <ArrowBottom className='fill-light-primary group-hover:fill-green-primary group-hover:transform group-hover:duration-200 group-hover:transition group-hover:ease-out' />
                         {t('DownloadCV')}
                     </button>
                 </li>
                 <li>
-                    <Link href="#" className="secondaryBtn">
-                        <ArrowRight />
+                    <Link href="#" className="secondaryBtn group">
+                        <ArrowRight className='fill-green-primary group-hover:fill-dark-black group-hover:transform group-hover:duration-200 group-hover:transition group-hover:ease-out'  />
                         <p>{t('ContactMe')}</p>
                     </Link>
                 </li>

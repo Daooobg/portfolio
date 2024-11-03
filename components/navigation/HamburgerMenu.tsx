@@ -17,7 +17,7 @@ export default function HamburgerMenu() {
     }, []);
 
     return (
-        <div className='lg:hidden'>
+        <div className="lg:hidden">
             {/* Hamburger Icon */}
             <div
                 className={`flex flex-col gap-1.5 items-end my-2.5 mx-1 md:gap-2 md:mx-1.5 md:my-3 ${
@@ -59,14 +59,14 @@ export default function HamburgerMenu() {
                     <LanguageSwitcher />
                     <ul className="space-y-4">
                         <li>
-                            <Link href="#" className="secondaryBtn">
-                                <ArrowRight />
+                            <Link href="#" className="secondaryBtn group">
+                                <ArrowRight className="fill-green-primary group-hover:fill-dark-black group-hover:transform group-hover:duration-200 group-hover:transition group-hover:ease-out" />
                                 <p>{t('ContactMe')}</p>
                             </Link>
                         </li>
                         <li>
-                            <button className="tertiaryBtn flex items-center gap-1">
-                                <ArrowBottom />
+                            <button className="tertiaryBtn flex items-center gap-1 group">
+                                <ArrowBottom className='fill-light-primary group-hover:fill-green-primary group-hover:transform group-hover:duration-200 group-hover:transition group-hover:ease-out'  />
                                 {t('DownloadCV')}
                             </button>
                         </li>
