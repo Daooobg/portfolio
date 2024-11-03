@@ -8,7 +8,6 @@ export default function Home() {
                 <HeroSection />
                 <SkillsSection />
             </main>
-            <footer></footer>
         </>
     );
 }
