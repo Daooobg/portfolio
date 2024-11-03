@@ -76,7 +76,7 @@ export default function HamburgerMenu() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" className="tertiaryBtn">
+                            <Link href="#skillsSection" className="tertiaryBtn" onClick={handleHamburger}>
                                 {t('Skills')}
                             </Link>
                         </li>

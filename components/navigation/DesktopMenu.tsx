@@ -17,7 +17,7 @@ export default function DesktopMenu() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="#" className="tertiaryBtn">
+                    <Link href="#skillsSection" className="tertiaryBtn">
                         {t('Skills')}
                     </Link>
                 </li>
