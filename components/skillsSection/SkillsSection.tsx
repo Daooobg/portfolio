@@ -20,10 +20,10 @@ import Image from 'next/image';
 export default function SkillsSection() {
     const t = useTranslations('HomePage.SkillsSection');
     return (
-        <section id='skillsSection' className="bg-dark-black py-10 space-y-10 px-4">
+        <section id='skillsSection' className="bg-dark-black py-10 space-y-10 px-4 sm:space-y-12 sm:py-20">
             <div className="text-center max-w-[700px] mx-auto">
-                <p className="text-green-primary text-base font-medium leading-normal mb-1">{t('Header')}</p>
-                <p className="text-light-primary text-base font-normal leading-normal">{t('Body')}</p>
+                <p className="text-green-primary text-base font-medium leading-normal mb-1 sm:text-[32px] sm:leading-[48px] sm:mb-2">{t('Header')}</p>
+                <p className="text-light-primary text-base font-normal leading-normal sm:text-lg sm:leading-[27px]">{t('Body')}</p>
             </div>
             <div className="overflow-x-scroll grid grid-cols-[215px_300px] gap-y-10 gap-x-4 sm:justify-center sm:grid-cols-[245px_auto] sm:overflow-hidden">
                 {/* Programming Languages */}
