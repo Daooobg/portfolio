@@ -8,6 +8,7 @@ import HamburgerMenu from '@components/navigation/HamburgerMenu';
 import DesktopMenu from '@components/navigation/DesktopMenu';
 
 import './globals.css';
+import Footer from '@components/footer/Footer';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -38,6 +39,7 @@ export default async function RootLayout({
                         <DesktopMenu />
                     </nav>
                     {children}
+                    <Footer />
                 </body>
             </NextIntlClientProvider>
         </html>
