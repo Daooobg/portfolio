@@ -14,6 +14,16 @@
             "Header": "Web Develope",
             "Text": "I bring creative ideas to life with code. I specialize in JavaScript, and modern frameworks to create seamless and engaging web experiences. Let's build something extraordinary together!",
             "ButtonContent": "Let’s Talk"
+        },
+        "SkillsSection": {
+            "Header": "Skills",
+            "Body": "Results-oriented JavaScript developer with a passion for crafting innovative web solutions, leveraging modern frameworks and tools.",
+            "ProgrammingLanguages": "Programming Languages",
+            "WebTechnologies": "Web Technologies",
+            "FrontEnd": "Front-end",
+            "BackEnd": "Back-end",
+            "Database": "Database",
+            "StateManagement": "State Management"
         }
     }
 }
