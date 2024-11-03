@@ -14,6 +14,8 @@ const config: Config = {
                 light: { primary: '#F5F5F5' },
                 dark: { black: '#000000', gray: '#616161', darkGray: '#202020', lightGray: '#9C9C9C' },
                 green: { primary: '#2BCF7E', secondary: '#ACFFD6' },
+                divider: '#ABABAB',
+                footerText: '#CFCFCF'
             },
         },
     },
