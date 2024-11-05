@@ -28,7 +28,7 @@ export default function DesktopMenu() {
                     </button>
                 </li>
                 <li>
-                    <Link href="#" className="secondaryBtn group">
+                    <Link href="#contactSection" className="secondaryBtn group">
                         <ArrowRight className="fill-green-primary group-hover:fill-dark-black group-hover:transform group-hover:duration-200 group-hover:transition group-hover:ease-out" />
                         <p>{t('ContactMe')}</p>
                     </Link>

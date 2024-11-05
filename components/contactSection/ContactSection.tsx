@@ -26,7 +26,7 @@ export default function ContactSection({
     // TODO handle server errors and form validation
 
     return (
-        <section className="py-10 px-4 sm:py-20">
+        <section id='contactSection' className="py-10 px-4 sm:py-20">
             <h2 className="text-green-primary text-base font-medium leading-normal text-center sm:text-[32px] sm:leading-[48px]">
                 {t('ContactMe')}
             </h2>
