@@ -65,10 +65,10 @@ export default function HamburgerMenu() {
                             </Link>
                         </li>
                         <li>
-                            <button className="tertiaryBtn flex items-center gap-1 group">
+                            <a download href='./Ivaylo_Ivanov_CV.pdf' className="tertiaryBtn flex items-center gap-1 group">
                                 <ArrowBottom className='fill-light-primary group-hover:fill-green-primary group-hover:transform group-hover:duration-200 group-hover:transition group-hover:ease-out'  />
                                 {t('DownloadCV')}
-                            </button>
+                            </a>
                         </li>
                         <li>
                             <Link href="#" className="tertiaryBtn">
