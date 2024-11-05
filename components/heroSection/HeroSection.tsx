@@ -24,7 +24,7 @@ export default function HeroSection() {
                 </p>
                 <p className="text-dark-lightGray text-lg font-normal leading-[27px]">{t('Text')}</p>
                 <div className='pt-8 sm:pt-0'>
-                    <Link href="#" className="primaryBtn w-full  sm:w-auto">
+                    <Link href="#contactSection" className="primaryBtn w-full  sm:w-auto">
                         <ArrowRight className='fill-dark-black' />
                         {t('ButtonContent')}
                     </Link>
