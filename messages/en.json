@@ -31,6 +31,14 @@
             "BackEnd": "Back-end",
             "Database": "Database",
             "StateManagement": "State Management"
+        },
+        "ContactSection": {
+            "ContactMe": "Contact me",
+            "FullName": "First and Last Name",
+            "Email": "Email",
+            "Message": "Message",
+            "FormSubmit": "Send message",
+            "FormSubmitSuccess": "I received your message - thank you for choosing to contact me! I will answer you as soon as possible."
         }
     }
 }
