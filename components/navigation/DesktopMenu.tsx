@@ -12,12 +12,12 @@ export default function DesktopMenu() {
             {/* Menu Items */}
             <ul className="flex gap-9 items-center">
                 <li>
-                    <Link href="#" className="tertiaryBtn">
+                    <Link href="/#" className="tertiaryBtn">
                         {t('Portfolio')}
                     </Link>
                 </li>
                 <li>
-                    <Link href="#skillsSection" className="tertiaryBtn">
+                    <Link href="/#skillsSection" className="tertiaryBtn">
                         {t('Skills')}
                     </Link>
                 </li>
@@ -28,7 +28,7 @@ export default function DesktopMenu() {
                     </a>
                 </li>
                 <li>
-                    <Link href="#contactSection" className="secondaryBtn group">
+                    <Link href="/#contactSection" className="secondaryBtn group">
                         <ArrowRight className="fill-green-primary group-hover:fill-dark-black group-hover:transform group-hover:duration-200 group-hover:transition group-hover:ease-out" />
                         <p>{t('ContactMe')}</p>
                     </Link>

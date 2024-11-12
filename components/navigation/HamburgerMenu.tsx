@@ -59,7 +59,7 @@ export default function HamburgerMenu() {
                     <LanguageSwitcher />
                     <ul className="space-y-4">
                         <li>
-                            <Link href="#contactSection" className="secondaryBtn group" onClick={handleHamburger}>
+                            <Link href="/#contactSection" className="secondaryBtn group" onClick={handleHamburger}>
                                 <ArrowRight className="fill-green-primary group-hover:fill-dark-black group-hover:transform group-hover:duration-200 group-hover:transition group-hover:ease-out" />
                                 <p>{t('ContactMe')}</p>
                             </Link>
@@ -71,12 +71,12 @@ export default function HamburgerMenu() {
                             </a>
                         </li>
                         <li>
-                            <Link href="#" className="tertiaryBtn">
+                            <Link href="/#" className="tertiaryBtn">
                                 {t('Portfolio')}
                             </Link>
                         </li>
                         <li>
-                            <Link href="#skillsSection" className="tertiaryBtn" onClick={handleHamburger}>
+                            <Link href="/#skillsSection" className="tertiaryBtn" onClick={handleHamburger}>
                                 {t('Skills')}
                             </Link>
                         </li>
