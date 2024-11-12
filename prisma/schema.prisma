@@ -30,3 +30,9 @@ model Session {
   expiresAt   DateTime
   userProfile UserProfile @relation(references: [id], fields: [userId], onDelete: Cascade)
 }
+
+model Settings {
+  id                 Int     @id @default(autoincrement())
+  registerPermission Boolean @default(false)
+  portfolioNumbers   Int     @default(3)
+}
