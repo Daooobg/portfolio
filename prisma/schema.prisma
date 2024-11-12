@@ -20,4 +20,13 @@ model UserProfile {
   password  String
   createAt  DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  sessions Session[]
+}
+
+model Session {
+  id          String      @id @default(uuid())
+  userId      String
+  expiresAt   DateTime
+  userProfile UserProfile @relation(references: [id], fields: [userId], onDelete: Cascade)
 }
