@@ -1,7 +1,7 @@
 'use server';
 
 import { hashUserPassword, verifyPassword } from '@/lib/hash';
-import { createAuthSession } from '@/lib/luciaSessions';
+import { createAuthSession, destroySession } from '@/lib/luciaSessions';
 import { createUser, getUserByEmail } from '@/lib/user';
 import { redirect } from 'next/navigation';
 
@@ -91,4 +91,21 @@ export default async function auth(mode: string, formState: { errors: string[] }
         return register(formState, formData);
     }
     return login(formState, formData);
+}
+
+export async function logout() {
+    try {
+        // TODO handle on success
+
+        await destroySession();
+        redirect('/');
+    } catch (error) {
+        // TODO handle error
+
+        if (error instanceof Error) {
+            console.log(error.message);
+        } else {
+            console.log('Something went wrong');
+        }
+    }
 }
