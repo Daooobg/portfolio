@@ -40,5 +40,11 @@
             "FormSubmit": "Send message",
             "FormSubmitSuccess": "I received your message - thank you for choosing to contact me! I will answer you as soon as possible."
         }
+    },
+    "AuthForm": {
+        "Login": "Login",
+        "Register": "Register",
+        "Email": "Email",
+        "Password": "Password"
     }
 }
