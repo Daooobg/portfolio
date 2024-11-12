@@ -21,3 +21,16 @@ export async function createUser(email: string, hashPassword: string) {
         throw new Error('Something went wrong.');
     }
 }
+
+export function getUserByEmail(email: string) {
+    return db.userProfile.findUnique({
+        where: {
+            email,
+        },
+        select: {
+            email: true,
+            id: true,
+            password: true,
+        },
+    });
+}
