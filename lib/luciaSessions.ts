@@ -59,14 +59,25 @@ export async function verifyAuth() {
 export async function destroySession() {
     const { session } = await verifyAuth();
 
-    if (!session) {
-        throw new Error ('Unauthorized!')
+    if (!session || !session.id) {
+        throw new Error('Unauthorized!');
     }
 
-    await lucia.invalidateSession(session.id);
+    try {
+        await db.session.delete({
+            where: {
+                id: session.id,
+            },
+        });
 
-    const sessionCookie = lucia.createBlankSessionCookie();
-    (await cookies()).set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+        await lucia.invalidateSession(session.id);
 
-    return { success: true, message: 'Session destroyed successfully.' };
+        const sessionCookie = lucia.createBlankSessionCookie();
+        (await cookies()).set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+
+        return { success: true, message: 'Session destroyed successfully.' };
+    } catch (error) {
+        console.error('Failed to destroy session:', error);
+        throw new Error('Failed to destroy session.');
+    }
 }
