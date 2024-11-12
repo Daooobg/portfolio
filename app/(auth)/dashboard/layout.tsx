@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import '../../globals.css';
 import Footer from '@components/footer/Footer';
 import Link from 'next/link';
+import { verifyAuth } from '@/lib/luciaSessions';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
     title: 'Ivaylo Ivanov Portfolio',
@@ -14,6 +16,12 @@ export default async function DashboardLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const result = await verifyAuth();
+
+    if (!result.user) {
+        redirect('/');
+    }
+
     return (
         <div className="bg-dark-black">
             <nav className="flex justify-end gap-6 p-4 items-center md:px-20 md:py-10 max-w-[1240px] mx-auto">
