@@ -5,7 +5,7 @@ import { createAuthSession } from '@/lib/luciaSessions';
 import { createUser, getUserByEmail } from '@/lib/user';
 import { redirect } from 'next/navigation';
 
-export async function register(formState: unknown, formData: FormData) {
+async function register(formState: unknown, formData: FormData) {
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
 
@@ -44,7 +44,7 @@ export async function register(formState: unknown, formData: FormData) {
     redirect('/dashboard');
 }
 
-export async function login(prevState: { errors: string[] }, formData: FormData) {
+async function login(prevState: { errors: string[] }, formData: FormData) {
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
 
@@ -84,4 +84,11 @@ export async function login(prevState: { errors: string[] }, formData: FormData)
 
     await createAuthSession(existingUser.id);
     redirect('/dashboard');
+}
+
+export default async function auth(mode: string, formState: { errors: string[] }, formData: FormData) {
+    if (mode === 'register') {
+        return register(formState, formData);
+    }
+    return login(formState, formData);
 }
