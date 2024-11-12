@@ -1,12 +1,16 @@
 'use client';
 
+import { register } from '@actions/authAction';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
+import { useActionState } from 'react';
 
 export default function AuthForm() {
     const t = useTranslations('AuthForm');
     const params = useSearchParams();
     const mode = params.get('mode') || 'login';
+
+    const [formState, formAction] = useActionState(register, { errors: [] });
 
     return (
         <section id="contactSection" className="py-10 px-4 sm:py-20">
@@ -14,7 +18,7 @@ export default function AuthForm() {
                 {mode === 'register' ? t('Register') : t('Login')}
             </h2>
 
-            <form className="max-w-[560px] m-auto mt-6 space-y-6">
+            <form action={formAction} className="max-w-[560px] m-auto mt-6 space-y-6">
                 <div className="flex flex-col gap-2">
                     <label htmlFor="email" className="text-dark-lightGray text-sm font-normal leading-[18px]">
                         {t('Email')}
@@ -35,6 +39,13 @@ export default function AuthForm() {
                         className="h-11 bg-inherit text-dark-gray border border-dark-lightGray rounded px-2"
                     />
                 </div>
+                {formState?.errors && (
+                    <ul className="text-red-500">
+                        {formState.errors.map((error, inx) => (
+                            <li key={inx}>{error}</li>
+                        ))}
+                    </ul>
+                )}
                 <div className="flex justify-center">
                     <button type="submit" className="primaryBtn w-full sm:w-auto">
                         {mode === 'register' ? t('Register') : t('Login')}
