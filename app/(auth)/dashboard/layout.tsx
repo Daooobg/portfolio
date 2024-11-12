@@ -5,6 +5,7 @@ import Footer from '@components/footer/Footer';
 import Link from 'next/link';
 import { verifyAuth } from '@/lib/luciaSessions';
 import { redirect } from 'next/navigation';
+import { logout } from '@actions/authAction';
 
 export const metadata: Metadata = {
     title: 'Ivaylo Ivanov Portfolio',
@@ -31,7 +32,7 @@ export default async function DashboardLayout({
                 <Link href="/dashboard/settings" className="secondaryBtn">
                     Settings
                 </Link>
-                <form>
+                <form action={logout}>
                     <button type="submit" className="secondaryBtn">
                         Logout
                     </button>
