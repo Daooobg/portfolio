@@ -1,6 +1,6 @@
 'use client';
 
-import { register } from '@actions/authAction';
+import auth from '@actions/authAction';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { useActionState } from 'react';
@@ -10,7 +10,7 @@ export default function AuthForm() {
     const params = useSearchParams();
     const mode = params.get('mode') || 'login';
 
-    const [formState, formAction] = useActionState(register, { errors: [] });
+    const [formState, formAction] = useActionState(auth.bind(null, mode), { errors: [] });
 
     return (
         <section id="contactSection" className="py-10 px-4 sm:py-20">
