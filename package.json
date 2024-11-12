@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lucia-auth/adapter-prisma": "^4.0.1",
     "@prisma/client": "^5.22.0",
     "@svgr/webpack": "^8.1.0",
+    "lucia": "^3.2.2",
     "next": "15.0.2",
     "next-cloudinary": "^6.16.0",
     "next-intl": "^3.24.0",
