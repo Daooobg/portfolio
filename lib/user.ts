@@ -22,7 +22,7 @@ export async function createUser(email: string, hashPassword: string) {
     }
 }
 
-export function getUserByEmail(email: string) {
+export async function getUserByEmail(email: string) {
     return db.userProfile.findUnique({
         where: {
             email,
