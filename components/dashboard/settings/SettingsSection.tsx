@@ -1,4 +1,11 @@
-export default function SettingsSection() {
+'use client';
+
+import { SettingsType } from '@/types/settings';
+import { useState } from 'react';
+
+export default function SettingsSection({ settingsData }: { settingsData: SettingsType }) {
+    const [settings, setSettings] = useState(settingsData);
+
     return (
         <section>
             <form className="text-green-primary max-w-[300px] mx-auto">
@@ -8,7 +15,12 @@ export default function SettingsSection() {
                 {/* Toggle Active registration radio */}
                 <label className="inline-flex items-center me-5 cursor-pointer mb-5">
                     <span className="mr-4">Active registration</span>
-                    <input type="checkbox" name="activeRegister" className="sr-only peer" />
+                    <input
+                        type="checkbox"
+                        name="activeRegister"
+                        className="sr-only peer"
+                        checked={settings.registerPermission}
+                    />
                     <div className="relative w-11 h-6  bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-[#3b3b3b]  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-green-600"></div>
                 </label>
 
@@ -23,6 +35,7 @@ export default function SettingsSection() {
                                     type="radio"
                                     name="visibility"
                                     value={value}
+                                    checked={settings.visibleProjects === value}
                                     className="w-6 h-6 accent-green-primary cursor-pointer"
                                 />
                                 <label
