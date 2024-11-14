@@ -1,14 +1,43 @@
 'use client';
 
 import { SettingsType } from '@/types/settings';
-import { useState } from 'react';
+import { updateSettings } from '@actions/settingsActions';
+
+import { useActionState, useEffect, useState } from 'react';
 
 export default function SettingsSection({ settingsData }: { settingsData: SettingsType }) {
     const [settings, setSettings] = useState(settingsData);
 
+    const toggleRegister = () => {
+        setSettings((prev) => ({
+            ...prev,
+            registerPermission: !prev.registerPermission,
+        }));
+    };
+
+    const selectVisibility = (value: number) => {
+        setSettings((prev) => ({
+            ...prev,
+            visibleProjects: value,
+        }));
+    };
+    const [formState, formAction] = useActionState(updateSettings, {
+        errors: [],
+        activeRegister: settingsData.registerPermission,
+        visibility: settingsData.visibleProjects,
+    });
+
+    useEffect(() => {
+        if (formState && 'activeRegister' in formState && 'visibility' in formState) {
+            setSettings({
+                registerPermission: formState.activeRegister as boolean,
+                visibleProjects: formState.visibility as number,
+            });
+        }
+    }, [formState]);
     return (
         <section>
-            <form className="text-green-primary max-w-[300px] mx-auto">
+            <form className="text-green-primary max-w-[300px] mx-auto" action={formAction}>
                 <h2 className="text-green-primary text-base font-medium leading-normal text-center sm:text-[32px] sm:leading-[48px] mb-10">
                     Settings {/* {t('ContactMe')} */}
                 </h2>
@@ -20,6 +49,7 @@ export default function SettingsSection({ settingsData }: { settingsData: Settin
                         name="activeRegister"
                         className="sr-only peer"
                         checked={settings.registerPermission}
+                        onChange={toggleRegister}
                     />
                     <div className="relative w-11 h-6  bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-[#3b3b3b]  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-green-600"></div>
                 </label>
@@ -37,6 +67,7 @@ export default function SettingsSection({ settingsData }: { settingsData: Settin
                                     value={value}
                                     checked={settings.visibleProjects === value}
                                     className="w-6 h-6 accent-green-primary cursor-pointer"
+                                    onChange={() => selectVisibility(value)}
                                 />
                                 <label
                                     htmlFor={`checkbox-${value}`}
