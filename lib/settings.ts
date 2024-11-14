@@ -22,3 +22,26 @@ export async function getSettingsById(id: number) {
         throw error;
     }
 }
+
+export async function updateSettingsById(id: number, registerPermission: boolean, visibleProjects: number) {
+    try {
+        const updatedSettings = await db.settings.update({
+            where: {
+                id,
+            },
+            data: {
+                visibleProjects,
+                registerPermission,
+            },
+            select: {
+                registerPermission: true,
+                visibleProjects: true,
+            },
+        });
+
+        return updatedSettings;
+    } catch (error) {
+        console.log(error)
+        throw new Error('Unable to update settings. Please try again later.');
+    }
+}
