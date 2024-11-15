@@ -12,6 +12,7 @@
     "@lucia-auth/adapter-prisma": "^4.0.1",
     "@prisma/client": "^5.22.0",
     "@svgr/webpack": "^8.1.0",
+    "cloudinary": "^2.5.1",
     "lucia": "^3.2.2",
     "next": "15.0.2",
     "next-cloudinary": "^6.16.0",
