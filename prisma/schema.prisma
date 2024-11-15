@@ -21,7 +21,8 @@ model UserProfile {
   createAt  DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  sessions Session[]
+  sessions   Session[]
+  portfolios Projects[]
 }
 
 model Session {
@@ -35,4 +36,41 @@ model Settings {
   id                 Int     @id @default(autoincrement())
   registerPermission Boolean @default(false)
   visibleProjects    Int     @default(3)
+}
+
+model Projects {
+  id          String   @id @default(uuid())
+  projectName String
+  mainImage   String
+  otherImages String[]
+
+  messages   Messages? @relation("ProjectsToMessages", fields: [messagesId], references: [id])
+  messagesId String?   @unique
+
+  links   Links?  @relation("ProjectsToLinks", fields: [linksId], references: [id])
+  linksId String? @unique
+
+  userProfile   UserProfile @relation(fields: [userProfileId], references: [id], onDelete: Cascade)
+  userProfileId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Messages {
+  id       String @id @default(uuid())
+  enHeader String
+  enText   String
+  bgHeader String
+  bgText   String
+
+  projects Projects? @relation("ProjectsToMessages")
+}
+
+model Links {
+  id          String @id @default(uuid())
+  liveProject String
+  github      String
+
+  projects Projects? @relation("ProjectsToLinks")
 }
