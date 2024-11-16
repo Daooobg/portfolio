@@ -26,8 +26,8 @@ export default async function DashboardLayout({
     return (
         <div className="bg-dark-black">
             <nav className="flex justify-end gap-6 p-4 items-center md:px-20 md:py-10 max-w-[1240px] mx-auto">
-                <Link href="/dashboard/addPortfolio" className="secondaryBtn">
-                    Add Portfolio
+                <Link href="/dashboard/addProjects" className="secondaryBtn">
+                    Add Projects
                 </Link>
                 <Link href="/dashboard/settings" className="secondaryBtn">
                     Settings
