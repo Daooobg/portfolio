@@ -12,7 +12,7 @@ export default function DesktopMenu() {
             {/* Menu Items */}
             <ul className="flex gap-9 items-center">
                 <li>
-                    <Link href="/#" className="tertiaryBtn">
+                    <Link href="/#portfolioSection" className="tertiaryBtn">
                         {t('Portfolio')}
                     </Link>
                 </li>

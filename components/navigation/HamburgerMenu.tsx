@@ -71,7 +71,7 @@ export default function HamburgerMenu() {
                             </a>
                         </li>
                         <li>
-                            <Link href="/#" className="tertiaryBtn">
+                            <Link href="/#portfolioSection" className="tertiaryBtn">
                                 {t('Portfolio')}
                             </Link>
                         </li>
