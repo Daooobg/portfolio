@@ -77,6 +77,7 @@ export async function getRegisterSettings() {
         });
         return registerPermission;
     } catch (error) {
+        console.error('Error fetching registration permissions:', error);
         throw new Error('Unable to verify registration permissions.');
     }
 }
