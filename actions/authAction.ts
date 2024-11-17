@@ -34,6 +34,7 @@ async function register(formState: unknown, formData: FormData) {
             errors.push('Register is not permitted.');
         }
     } catch (error) {
+        console.log(error);
         errors.push('Register is not permitted.');
     }
 
