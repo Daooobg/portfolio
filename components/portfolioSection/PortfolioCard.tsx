@@ -26,6 +26,7 @@ export default function PortfolioCard({
                 tint="40:black"
                 sizes="100vw"
                 quality={100}
+                className="rounded-lg"
             />
             <p className="text-light-primary font-bold ">{project.projectName}</p>
             <div>
