@@ -39,6 +39,11 @@
             "Message": "Message",
             "FormSubmit": "Send message",
             "FormSubmitSuccess": "I received your message - thank you for choosing to contact me! I will answer you as soon as possible."
+        },
+        "PortfolioSection": {
+            "Header": "Portfolio",
+            "Text": "Each project showcases my expertise in JavaScript, modern frameworks, and responsive design, reflecting my commitment to delivering high-quality solutions.",
+            "LinkText": "See more"
         }
     },
     "AuthForm": {
