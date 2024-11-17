@@ -2,6 +2,7 @@
 
 import { hashUserPassword, verifyPassword } from '@/lib/hash';
 import { createAuthSession, destroySession } from '@/lib/luciaSessions';
+import { getRegisterSettings } from '@/lib/settings';
 import { createUser, getUserByEmail } from '@/lib/user';
 import { redirect } from 'next/navigation';
 
@@ -25,6 +26,15 @@ async function register(formState: unknown, formData: FormData) {
         errors.push(
             'Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., @$!%*?&).'
         );
+    }
+
+    try {
+        const registerPermission = await getRegisterSettings();
+        if (!registerPermission || registerPermission.registerPermission === false) {
+            errors.push('Register is not permitted.');
+        }
+    } catch (error) {
+        errors.push('Register is not permitted.');
     }
 
     if (errors.length > 0) {
