@@ -2,6 +2,7 @@
 
 import db from './db';
 import { verifyAuth } from './luciaSessions';
+import { getVisibleProjectsNumber } from './settings';
 
 export async function createProject(
     projectName: string,
@@ -45,7 +46,7 @@ export async function createProject(
                 mainImage: mainImageUrl,
                 otherImages: otherImagesUrls,
                 messagesId: messages.id,
-                linksId: links.id, 
+                linksId: links.id,
                 userProfileId: user.user?.id,
             },
         });
@@ -54,5 +55,26 @@ export async function createProject(
     } catch (error) {
         console.error('Error creating portfolio:', error);
         throw new Error('Failed to create project.');
+    }
+}
+
+export async function getProjectList() {
+    try {
+        const projectsNumber = await getVisibleProjectsNumber();
+        if (!projectsNumber?.visibleProjects) {
+            return undefined;
+        }
+        const projectList = await db.projects.findMany({
+            take: projectsNumber.visibleProjects,
+            orderBy: { createdAt: 'desc' },
+            select: {
+                mainImage: true,
+                id: true,
+                projectName: true,
+            },
+        });
+        return projectList;
+    } catch (error) {
+        console.log(error);
     }
 }
