@@ -41,7 +41,26 @@ export async function updateSettingsById(id: number, registerPermission: boolean
 
         return updatedSettings;
     } catch (error) {
-        console.log(error)
+        console.log(error);
         throw new Error('Unable to update settings. Please try again later.');
+    }
+}
+
+export async function getVisibleProjectsNumber() {
+    try {
+        const visibleProjects = await db.settings.findUnique({
+            where: {
+                id: 1,
+            },
+            select: {
+                visibleProjects: true,
+            },
+        });
+        if (!visibleProjects) {
+            throw new Error('No settings found for visibleProjects');
+        }
+        return visibleProjects;
+    } catch (error) {
+        throw error;
     }
 }
