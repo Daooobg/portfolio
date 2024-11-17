@@ -64,3 +64,19 @@ export async function getVisibleProjectsNumber() {
         throw error;
     }
 }
+
+export async function getRegisterSettings() {
+    try {
+        const registerPermission = db.settings.findUnique({
+            where: {
+                id: 1,
+            },
+            select: {
+                registerPermission: true,
+            },
+        });
+        return registerPermission;
+    } catch (error) {
+        throw new Error('Unable to verify registration permissions.');
+    }
+}
