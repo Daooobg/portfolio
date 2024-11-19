@@ -78,3 +78,29 @@ export async function getProjectList() {
         console.log(error);
     }
 }
+
+export async function getProjectById(id: string) {
+    return db.projects.findUnique({
+        where: {
+            id,
+        },
+        select: {
+            links: {
+                select: {
+                    github: true,
+                    liveProject: true,
+                },
+            },
+            mainImage: true,
+            otherImages: true,
+            messages: {
+                select: {
+                    bgHeader: true,
+                    bgText: true,
+                    enHeader: true,
+                    enText: true,
+                },
+            },
+        },
+    });
+}
