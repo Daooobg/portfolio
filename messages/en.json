@@ -56,5 +56,10 @@
         "Header": "Error 404 - page not found",
         "Body": "We couldn't locate the specific page you requested.",
         "LinkText": "Back to homepage"
+    },
+    "PortfolioDetails": {
+        "Contact": "Contact me",
+        "Git": "See project in GitHub",
+        "Live": "Deployment"
     }
 }
