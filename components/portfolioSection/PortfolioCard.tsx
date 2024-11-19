@@ -1,9 +1,10 @@
 'use client';
 
-import ArrowRight from '@/ui/design/ArrowRight';
 import { CldImage } from 'next-cloudinary';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+
+import ArrowRight from '@/ui/design/ArrowRight';
 
 export default function PortfolioCard({
     project,
@@ -17,6 +18,7 @@ export default function PortfolioCard({
     const t = useTranslations('HomePage.PortfolioSection');
     return (
         <div className="space-y-4 text-base leading-normal sm:text-lg sm:leading-[27px]">
+            {/* Cloudinary image component */}
             <CldImage
                 alt={project.projectName}
                 src={project.mainImage}
@@ -30,8 +32,8 @@ export default function PortfolioCard({
             />
             <p className="text-light-primary font-bold ">{project.projectName}</p>
             <div>
-                {/* TODO: add href to details page */}
-                <Link href="#" className="text-green-primary font-medium flex gap-2 items-center">
+                {/* Link to the project details page */}               
+                <Link href={`/projects/${project.id}`} className="text-green-primary font-medium flex gap-2 items-center">
                     <span>{t('LinkText')}</span>
                     <ArrowRight className="fill-green-primary" />
                 </Link>
