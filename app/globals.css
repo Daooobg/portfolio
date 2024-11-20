@@ -11,7 +11,7 @@
 }
 
 .primaryBtn {
-    @apply text-dark-black text-[22px] font-medium h-[58px] px-9 py-4 bg-green-primary rounded-xl justify-center items-center gap-2.5 inline-flex hover:bg-green-secondary transform duration-200 transition ease-out;
+    @apply text-dark-black text-base sm:text-[22px] font-medium h-11 sm:h-[58px] px-9 py-4 bg-green-primary rounded-xl justify-center items-center gap-2.5 inline-flex hover:bg-green-secondary transform duration-200 transition ease-out;
 }
 
 .secondaryBtn {
