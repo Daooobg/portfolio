@@ -2,8 +2,14 @@ import { getProjectById } from '@/lib/projects';
 import PortfolioDetails from '@components/portfolioDetails/PortfolioDetails';
 import { notFound } from 'next/navigation';
 
-export default async function ProjectDetailsPage({ params }: { params: { projectId: string } }) {
-    const project = await getProjectById((await params).projectId);
+export default async function ProjectDetailsPage({ params }: { params: Promise<{ projectId: string }> }) {
+    const { projectId } = await params;
+    
+    if (!projectId) {
+        notFound();
+    }
+
+    const project = await getProjectById(projectId);
 
     // If the project is not found, return a 404 page
     if (!project) {
